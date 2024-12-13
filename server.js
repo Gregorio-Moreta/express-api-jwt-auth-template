@@ -20,12 +20,18 @@ app.use(express.json());
 // ... other middleware
 
 
+
 // Routes go here
 app.use('/test-jwt', testJWTRouter);
 app.use('/users', usersRouter);
 app.use('/profiles', profilesRouter);
 
+app.get('/', (req, res) => {
+    res.json({"message":"your app is working"})
+})
 
-app.listen(3000, () => {
-  console.log(`this is your server link! http://localhost:${PORT}`);
+
+app.listen(PORT, () => {
+    // console.log(`this is your server link! http://localhost:${PORT}`);
+    console.log(`this is your server link! http://localhost:${PORT}`);
 });
